@@ -6,15 +6,18 @@
     <title>Contact Us</title>
     <style>
         /* CSS styles can go here */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
+        *{
             padding: 0;
-            background-color: black;
-            color: beige;
-            text-align: center;
+            margin: 0;
+            outline: none;
+            border: none;
+            box-sizing: border-box;
         }
-
+        body{
+            font-family: 'poppins',sans-serif;
+            background-color: #18181B;
+        }
+        
         nav {
             background-color: #333;
             padding: 10px;
@@ -46,36 +49,154 @@
             bottom: 0;
             width: 100%;
         }
+        nav{
+            
+            margin: auto;
+            padding: 2rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .nav-links{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .link a{
+            position: relative;
+            padding-bottom: 0.75rem;
+            color: #fff;
+        }
+        
+        .link a::after{
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 0;
+            bottom: 0;
+            left: 0;
+            background-color: blue;
+            transition: all 0.3s ease;
+        }
+        
+        .link a:hover::after{
+            width: 70%;
+        }
+        img{
+            width: 100%;
+            display: flex;
+        
+        }
+        .nav-logo{
+            max-width: 100px;
+        }
+        .container{
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            
+        }
+        .container .card{
+            background-color: #27272a;
+            padding: 1rem;
+            border: 2px solid transparent;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .container .card:hover{
+            background-color: #323232;
+            border-color: #fff;
+        }
+        .container .card h2{
+            margin-bottom: 0.5rem;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .container .card p{
+            color: #ccc;
+            margin-bottom: 1rem;}
+ 
+        .btn{
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            color: #fff;
+            background-color: rgb(55, 177, 6);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover{
+            background-color: #1e40af;
+        }
+        #name{
+            background-color: #ccc;
+            border-radius: 20px;
+            padding: 0;
+            border: 2px solid transparent;
+        }
+        #email{
+            background-color: #ccc;
+            border-radius: 20px;
+            padding: 0;
+            border: 2px solid transparent;
+        }
+        #message{
+            background-color: #ccc;
+            border-radius: 20px;
+            padding: 0;
+            border: 2px solid transparent;
+        }
+
     </style>
 </head>
 <body>
 
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="support.html">Support</a></li>
+        <div class="nav-logo">
+            <a href="#">
+                <img src="images/6.png"> 
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li class="link"><a href="index.html">Home</a></li>
+            <li class="link"><a href="about.html">About</a></li>
+            <li class="link"><a href="services.html">Services</a></li>
+            <li class="link"><a href="contact.html">Contact</a></li>
+            <li class="link"><a href="support.html">Support</a></li>
         </ul>
     </nav>
-    <section>
-        <h2>Contact Us</h2>
+    <section class="container">
+        <div class="card">
+           
+            <h2>Contact Us</h2>
         <p>Please feel free to get in touch with us using the following contact information:</p>
         <p>Web3wave</p>
         <p>Address:No physical adress yet,we meet at your convinience</p>
         <p>Phone: +254 100864188</p>
         <p>Email: Web3wave2024@gmail.com</p>
-        <p>You can also fill out the form below to send us a message:</p>
-        <form action="submit_contact_form.php" method="POST">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="4" required></textarea><br><br>
-            <input type="submit" value="Submit">
-        </form>
+        </div>
+        <div class="card">
+           
+            <p>You can also fill out the form below to send us a message:</p>
+            <form action="submit_contact_form.php" method="POST">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required ><br><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                <input type="submit" value="Submit" class="btn">
+            </form>
+        </div>
+       
     </section>
    <!--<footer>
         <p>&copy; 2024 Business Name. All Rights Reserved.</p>

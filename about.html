@@ -6,39 +6,24 @@
     <title>About Us</title>
     <style>
         /* CSS styles can go here */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
+        *{
             padding: 0;
-            background-color: black;
-            color: beige;
-            text-align: center;
-        }
-
-        nav {
-            background-color: #333;
-            padding: 10px;
-            color: beige;
-        }
-        nav ul {
-            list-style-type: none;
             margin: 0;
-            padding: 0;
-            text-align: center;
-            color: white;
+            outline: none;
+            border: none;
+            box-sizing: border-box;
         }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
+        body{
+            font-family: 'poppins',sans-serif;
+            background-color: #18181B;
         }
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-        }
-        section {
-            padding: 20px;
-        }
+        nav{
+            margin: auto;
+            padding: 2rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;}
         footer {
             background-color: #333;
             color: #fff;
@@ -48,29 +33,123 @@
             bottom: 0;
             width: 100%;
         }
+        .container{
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .container .card{
+            background-color: #27272a;
+            padding: 1rem;
+            border: 2px solid transparent;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        
+        .container .card:hover{
+            background-color: #323232;
+            border-color: #fff;
+        }
+        .container .card h2{
+            margin-bottom: 0.5rem;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .container .card p{
+            color: #ccc;
+            margin-bottom: 1rem;}
+
+        .nav-links{
+                list-style: none;
+                display: flex;
+                align-items: center;
+                gap: 3rem;
+            }
+            
+            .link a{
+                position: relative;
+                padding-bottom: 0.75rem;
+                color: #fff;
+            }
+            
+            .link a::after{
+                content: "";
+                position: absolute;
+                height: 2px;
+                width: 0;
+                bottom: 0;
+                left: 0;
+                background-color: blue;
+                transition: all 0.3s ease;
+            }
+            
+            .link a:hover::after{
+                width: 70%;
+            }
+            img{
+                width: 100%;
+                display: flex;
+            
+            }
+            .nav-logo{
+                max-width: 100px;
+            }
+            nav ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+            nav ul li {
+                display: inline;
+                margin-right: 20px;
+            }
+            nav ul li a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+            }
     </style>
 </head>
 <body>
     
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="support.html">Support</a></li>
+        <div class="nav-logo">
+            <a href="#">
+                <img src="images/6.png"> 
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li class="link"><a href="index.html">Home</a></li>
+            <li class="link"><a href="about.html">About</a></li>
+            <li class="link"><a href="services.html">Services</a></li>
+            <li class="link"><a href="contact.html">Contact</a></li>
+            <li class="link"><a href="support.html">Support</a></li>
         </ul>
     </nav>
-    <section>
-        <h2>About Us</h2>
-        <p>Welcome to Web3wave, where we strive to provide exceptional services to our customers.</p>
-        <p>Our mission is to ensure that every business and every individual who wishes to have a website<br></p>
-        <p>will have one that will be able to reach to every person whom they wish to reach<br></p>
-        <p>we also specialize in binance trading and graphic designing at prices which you the customer<br>
-        and us will negotiate to ensure both parties are satisfied<br></p>
+    <section class="container">
+        <div class="card">
+            <h2>About Us</h2>
+             <p>Welcome to Web3wave, where we strive to provide exceptional services to our customers.</p>
+            <p>Our mission is to ensure that every business and every individual who wishes to have a website<br></p>
+            <p>will have one that will be able to reach to every person whom they wish to reach<br></p>
+            <p>we also specialize in binance trading and graphic designing at prices which you the customer<br>
+            </div>
+        
+        <div class="card">
+            and us will negotiate to ensure both parties are satisfied<br></p>
         <p>We value your trust in us to enable your business to get to a new level through easy reach<br>
         by your customers in the internet<br></p>
         <p>Contact us to learn more about our business and how we can assist you.</p>
+    
+        </div>
     </section>
     <footer>
         <p>&copy; 2024 Web3wave. All Rights Reserved.</p>
